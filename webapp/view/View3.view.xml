@@ -1,0 +1,99 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+          xmlns="sap.m" 
+          xmlns:form="sap.ui.layout.form"
+          xmlns:t="sap.ui.table"
+          
+          controllerName="tom.controller.View3">
+          <Page title="Welcome to my Resource model demo page 😊">
+            <t:Table rows="{/empTab/row}" visibleRowCount="4" selectionMode="Single" rowSelectionChange="onRowselection" >
+              <t:columns>
+                <t:Column >
+                  <t:label>
+                    <Text text="{i18n>XCOL_EMPID}"></Text>
+                  </t:label>
+                  <t:template>
+                    <Text text="{empId}"></Text>
+                    
+                  </t:template>
+                </t:Column>
+                 <!-- as Alt is present in the document we can use label as below -->
+                <t:Column label="{i18n>XCOL_EMPNAME}">
+                  <t:template>    
+                    <Input value="{empName}"></Input>
+                  </t:template>
+                </t:Column>
+                <t:Column label="{i18n>XCOL_SAL}">
+                  <t:template>  
+                    <HBox>
+                    <Text text="{salary}"></Text>
+                    <Text text="{currency}"></Text>
+                    </HBox>  
+                    
+                  </t:template>
+                </t:Column>
+                <t:Column label="{i18n>XCOL_GEN}">
+                  <t:template>
+                    <Image src="{gender}" width="20px" height="20px" ></Image>
+                  </t:template>
+                </t:Column>
+                <t:Column label="{i18n>XCOL_SMK}">
+                  <t:template>
+                    <CheckBox selected="{=${smoker} === 'true' ? true : false}"></CheckBox>
+                  </t:template>
+                </t:Column>
+                <t:Column label="{i18n>XCOL_MSTAT}">
+                  <t:template>
+                    <Select selectedKey="{mStats}">
+                      <items>
+                        <core:Item key="M" text="Married"></core:Item>
+                        <core:Item key="S" text="Single"></core:Item>
+                      </items>
+                    </Select>
+                  </t:template>
+                  
+                </t:Column>
+                <t:Column label="{i18n>XCOL_RATE}">
+                  <t:template>
+                    <RatingIndicator value="{rating}"></RatingIndicator>
+                  </t:template>
+                  
+                </t:Column>
+                
+              </t:columns>
+              
+               <!-- For static modifiction of row data in the table -->
+              <!-- <t:rows>
+                <t:Row ></t:Row>
+                <t:Row ></t:Row>
+                <t:Row ></t:Row>
+              </t:rows> -->
+            </t:Table>
+          <form:SimpleForm editable="true" id="idSimple">
+            <!-- this is the aggrigation of the simple form class -->
+            <form:content >
+            <Label text="{i18n>XCOL_EMPID}"></Label>
+            <Input id="idEmpId" width="30%" value="{empId}"></Input>
+            <Label text="{i18n>XCOL_EMPNAME}"></Label>
+            <Input id="idEmpName" width="50%" value="{path:'empName'}"></Input>
+            <Label text="{i18n>XCOL_SAL}"></Label>
+            <Input id="idEmpSal" width="30%" value="{salary}" enabled="{=${/empStr/empName} ==='Shiva'? false:true}"></Input> <!--Used expression binding for grade out this field  -->
+            <Label text="{i18n>XCOL_CURR}"></Label>
+            <Input id="idEmpCurr" width="20%" value="{currency}"></Input>
+            <Label text="{i18n>XCOL_SMK}"></Label>
+            <Switch id="idEmpSmk" state="{smoker}" ></Switch>
+            <!-- got is the name of the model we have given to another model and we can use this for multi model purpose -->
+            <Label text="{i18n>XCOL_EMPNAME}"></Label>
+            <Input id="idEmpName1" width="50%" value="{path:'got>/empStr/empName'}"></Input>
+            
+            </form:content>
+          </form:SimpleForm>
+          <footer>
+            <Toolbar >
+                
+            </Toolbar>
+          </footer>
+        </Page>
+          
+
+    
+</mvc:View>
