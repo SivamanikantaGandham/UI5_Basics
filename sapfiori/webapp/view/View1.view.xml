@@ -1,0 +1,42 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tcs.sap.ui.hm.controller.View1">
+    <Page title="View 1">
+        <!-- header -->
+        <headerContent>
+            <Button icon="sap-icon://action" press="onGoTo" tooltip="Goes to next view"></Button>
+        </headerContent>
+        <!-- content  -->
+        <!-- <Button text="Next" press="onGoTo"></Button> -->
+        <content>
+            <SearchField id="idSearch"></SearchField>
+            <List id="idList">
+                <items>
+                    <!-- used to show display only data left and right -->
+                    <DisplayListItem label="Apple" value="Best Antibiotic"></DisplayListItem>
+                    <!-- Standard list item,Top down display data along with icon  -->
+                    <StandardListItem description="Banana gives instant energy" title="Banana" icon="https://m.media-amazon.com/images/I/313UDz7oAhL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg" iconDensityAware="true"></StandardListItem>
+                    <!-- To accept input from our user -->
+                    <InputListItem >
+                        <HBox alignContent="Start">
+                            <Text text="Which fruit do you want today?" class="sapUiSmallMarginTop"></Text>
+                            <Input width="60%"></Input>
+                        </HBox>
+                    </InputListItem>
+                    <!-- design your own list items based on custom controls -->
+                    <CustomListItem >
+                        <HBox >
+                            <Text text="Would you like CoD" class="sapSmallMarginTop sapUiSmallMargin"></Text>
+                            <Switch ></Switch>
+                        </HBox>
+                    </CustomListItem>
+                    <!-- to display business object for user -->
+                    <ObjectListItem title="pineapple" intro="Rich vitamin C  " number="100 INR" numberUnit="Pc" icon="https://www.jiomart.com/images/product/original/590000070/pineapple-queen-1-pc-approx-700-g-1200-g-product-images-o590000070-p590000070-0-202203170357.jpg?im=Resize=(1000,1000)"></ObjectListItem>
+                    <!-- To display social media feed  -->
+                    <FeedListItem sender="Narendra Modi" icon="https://et-gbs.com/2022/wp-content/uploads/2021/12/Narendra-Modi-new.jpg" text="Hello Shiva" timestamp="Wednesday, 6 September "></FeedListItem>
+                    <!-- To create clickable actions -->
+                    <ActionListItem press="onOrder" text="Click here to order now" ></ActionListItem>
+                </items>
+            </List>
+        </content>
+        <!-- footer -->
+    </Page>
+</mvc:View>

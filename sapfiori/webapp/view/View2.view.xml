@@ -1,0 +1,9 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+controllerName="tcs.sap.ui.hm.controller.View2">
+    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+        <!-- header -->
+        <!-- content  -->
+        <!-- <Button text="Back" press="onBack"></Button> -->
+        <!-- footer -->
+    </Page>
+</mvc:View>

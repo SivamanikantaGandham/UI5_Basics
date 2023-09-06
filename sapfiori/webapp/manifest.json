@@ -1,0 +1,6 @@
+{
+    "sap.app": {
+        "id":"tcs.sap.ui.hm",
+        "type": "application"
+    }
+}
